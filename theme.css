@@ -1,0 +1,155 @@
+/* ================================
+   THEME SWITCHER
+================================ */
+
+.theme-switcher {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+
+    padding: .45rem;
+
+    border: 1px solid var(--theme-border);
+    border-radius: 18px;
+
+    background: var(--theme-panel);
+    backdrop-filter: blur(16px);
+
+    box-shadow: 0 14px 40px var(--theme-shadow);
+
+    transition:
+        background .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+
+/* Saat tertutup:
+   hanya tema aktif yang terlihat */
+
+.theme-switcher:not(.is-open) .theme-btn:not(.is-active) {
+    display: none;
+}
+
+
+/* Tombol */
+
+.theme-btn {
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+
+    min-width: 44px;
+    height: 44px;
+
+    padding: .3rem .6rem;
+
+    border: 0;
+    border-radius: 13px;
+
+    background: transparent;
+    color: var(--theme-text);
+
+    cursor: pointer;
+
+    transition:
+        background .3s ease,
+        transform .3s ease,
+        color .3s ease;
+}
+
+
+/* Hover */
+
+.theme-btn:hover {
+    background: var(--theme-hover);
+}
+
+
+/* Tema aktif */
+
+.theme-btn.is-active {
+    background: var(--theme-active);
+    color: var(--theme-active-text);
+}
+
+
+/* ================================
+   TEMA
+================================ */
+
+/* Pagi */
+
+body[data-theme="pagi"] {
+
+    --theme-panel: rgba(255, 255, 255, .85);
+    --theme-border: rgba(63, 110, 78, .16);
+
+    --theme-hover: rgba(220, 235, 224, .6);
+
+    --theme-active: #DCEBE0;
+    --theme-active-text: #1E3D2A;
+
+    --theme-text: #1E3D2A;
+
+    --theme-shadow: rgba(30, 61, 42, .14);
+}
+
+
+/* Siang */
+
+body[data-theme="siang"] {
+
+    --theme-panel: rgba(255, 255, 255, .88);
+    --theme-border: rgba(35, 136, 174, .18);
+
+    --theme-hover: rgba(217, 241, 250, .75);
+
+    --theme-active: #D9F1FA;
+    --theme-active-text: #145A78;
+
+    --theme-text: #145A78;
+
+    --theme-shadow: rgba(20, 90, 120, .14);
+}
+
+
+/* Sore */
+
+body[data-theme="sore"] {
+
+    --theme-panel: rgba(255, 248, 245, .88);
+    --theme-border: rgba(160, 79, 103, .20);
+
+    --theme-hover: rgba(248, 217, 206, .72);
+
+    --theme-active: #F8D9CE;
+    --theme-active-text: #49305B;
+
+    --theme-text: #49305B;
+
+    --theme-shadow: rgba(73, 48, 91, .16);
+}
+
+
+/* Malam */
+
+body[data-theme="malam"] {
+
+    --theme-panel: rgba(11, 16, 38, .88);
+    --theme-border: rgba(190, 197, 235, .18);
+
+    --theme-hover: rgba(43, 51, 86, .78);
+
+    --theme-active: #2B3358;
+    --theme-active-text: #F5F3CE;
+
+    --theme-text: #F5F3CE;
+
+    --theme-shadow: rgba(0, 0, 0, .34);
+}
